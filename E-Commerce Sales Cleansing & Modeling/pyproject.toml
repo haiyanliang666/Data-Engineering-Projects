@@ -1,0 +1,37 @@
+[project]
+name = "ecommerce-sales-cleansing-modeling"
+version = "0.1.0"
+description = "E-commerce Online Retail ingestion, cleansing, Postgres modeling, Airflow orchestration, and dashboarding."
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "apache-airflow>=2.9",
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+    "psycopg[binary]>=3.2",
+    "sqlalchemy>=2.0",
+    "streamlit>=1.36",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.4",
+    "pre-commit>=3.7",
+    "pytest>=8.2",
+    "pytest-mock>=3.14",
+    "ruff>=0.5",
+]
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "integration: tests that require docker-compose services",
+]
