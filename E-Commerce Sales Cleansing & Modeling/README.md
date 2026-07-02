@@ -65,6 +65,16 @@ ruff check . --fix
 pre-commit run --all-files
 ```
 
+Install the automatic Git pre-commit hook from the repository root:
+
+```bash
+cd "/Users/.../..."
+pre-commit install --config "E-Commerce Sales Cleansing & Modeling/.pre-commit-config.yaml"
+```
+
+`pip install -e '.[dev]'` installs tools such as `pytest`, `black`, `ruff`, and `pre-commit`.
+`pre-commit install` connects those checks to Git so they run automatically before each `git commit`.
+
 ## Docker Compose
 
 Start Postgres:
